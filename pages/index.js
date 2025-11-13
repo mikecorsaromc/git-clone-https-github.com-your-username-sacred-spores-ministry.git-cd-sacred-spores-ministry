@@ -1,0 +1,1 @@
+export default function Home(){return(<div>Welcome to Sacred Spores Ministry 🌿</div>)}

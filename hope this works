@@ -1,0 +1,91 @@
+// Improved interactive behaviors: mobile nav toggle, inline form status, donate modal, smooth scroll, set year
+document.addEventListener('DOMContentLoaded', function () {
+  const navToggle = document.getElementById('navToggle');
+  const primaryNav = document.getElementById('primary-nav');
+  const donateBtn = document.getElementById('donateBtn');
+  const donateModal = document.getElementById('donateModal');
+  const modalCloses = document.querySelectorAll('.modal-close');
+  const donateLink = document.getElementById('donateLink');
+
+  // Mobile nav toggle
+  if (navToggle && primaryNav) {
+    navToggle.addEventListener('click', function () {
+      const expanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', String(!expanded));
+      primaryNav.classList.toggle('open');
+    });
+
+    // Close nav when clicking a link (mobile)
+    primaryNav.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A' && primaryNav.classList.contains('open')) {
+        primaryNav.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  // Smooth scrolling for internal links
+  document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (href.length > 1) {
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          target.focus({ preventScroll: true });
+        }
+      }
+    });
+  });
+
+  // Donate modal open/close
+  if (donateBtn && donateModal) {
+    donateBtn.addEventListener('click', function () {
+      donateModal.setAttribute('aria-hidden', 'false');
+    });
+  }
+  modalCloses.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      donateModal.setAttribute('aria-hidden', 'true');
+    });
+  });
+  // Modal backdrop click to close
+  donateModal.addEventListener('click', function (e) {
+    if (e.target === donateModal) donateModal.setAttribute('aria-hidden', 'true');
+  });
+  // Placeholder donate action
+  if (donateLink) {
+    donateLink.addEventListener('click', function () {
+      alert('Replace this with your payment provider integration (Stripe / PayPal / Ko-fi).');
+    });
+  }
+
+  // Contact form handling (inline)
+  const form = document.getElementById('contactForm');
+  const status = document.getElementById('formStatus');
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const message = form.message.value.trim();
+
+      if (!name || !email || !message) {
+        if (status) status.textContent = 'Please complete all required fields.';
+        return;
+      }
+
+      // TODO: Replace with real integration: send to email service, server endpoint, or Zapier/Netlify/Formspree
+      if (status) status.textContent = 'Sending…';
+      setTimeout(function () {
+        if (status) status.textContent = 'Thanks — message received (demo).';
+        form.reset();
+      }, 700);
+    });
+  }
+
+  // Footer year
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+});

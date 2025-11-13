@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sacred Spores Ministry</title>
+  <meta name="description" content="Sacred Spores Ministry — community, events, spiritual study and connection." />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="#" aria-label="Sacred Spores Ministry home">
+        <!-- Place your logo at assets/logo.png -->
+        <img src="assets/logo.png" alt="Sacred Spores Ministry logo" class="logo" />
+        <span class="brand-text">
+          <strong>Sacred Spores</strong><span class="brand-sub">Ministry</span>
+        </span>
+      </a>
+
+      <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+        ☰
+      </button>
+
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#programs">Programs</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn ghost small" href="#contact">Get in touch</a>
+        <button id="donateBtn" class="btn primary small" aria-haspopup="dialog">Donate</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1 id="hero-title">Sacred Spores Ministry</h1>
+          <p class="lede">Intentional spaces for spiritual exploration, healing, and community integration.</p>
+          <p class="hero-body">
+            We host guided circles, education sessions, and integration groups focused on safety, consent, and mutual care.
+          </p>
+          <p>
+            <a class="btn primary" href="#events">Join our next circle</a>
+            <a class="btn ghost" href="#contact">Contact</a>
+          </p>
+        </div>
+
+        <div class="hero-media" aria-hidden="true">
+          <div class="media-placeholder">Photo / Illustration</div>
+          <div class="hero-meta small muted">Community • Education • Integration</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <h2 id="about-title">About Us</h2>
+        <p>
+          Sacred Spores Ministry is a community-centered project offering education, harm-reduction resources, and guided
+          gatherings. We emphasize informed consent, integration, and responsible support networks.
+        </p>
+
+        <div class="cards">
+          <article class="card" aria-labelledby="ed">
+            <h3 id="ed">Education</h3>
+            <p>Workshops on safety, preparation, and integration practices for personal healing.</p>
+          </article>
+          <article class="card" aria-labelledby="cer">
+            <h3 id="cer">Ceremony</h3>
+            <p>Facilitated spaces for intentional experience in supportive settings.</p>
+          </article>
+          <article class="card" aria-labelledby="com">
+            <h3 id="com">Community</h3>
+            <p>Integration circles, peer support, and community events to maintain connection.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section programs" id="programs" aria-labelledby="programs-title">
+      <div class="container">
+        <h2 id="programs-title">Programs</h2>
+        <p class="muted">
+          A few ongoing offerings — replace or expand these with your real program names, schedules, and registration links.
+        </p>
+        <ul class="program-list">
+          <li><strong>Intro Circle</strong> — Monthly online orientation and Q&A</li>
+          <li><strong>Integration Circle</strong> — Biweekly sharing and support</li>
+          <li><strong>Facilitator Training</strong> — Occasional trainings for community leaders</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section events" id="events" aria-labelledby="events-title">
+      <div class="container">
+        <h2 id="events-title">Upcoming Events</h2>
+        <ul class="event-list">
+          <li class="event">
+            <time datetime="2025-12-06">Dec 6, 2025</time>
+            <div>
+              <strong>Community Circle & Intro</strong>
+              <p class="muted">Online • Registration recommended</p>
+            </div>
+          </li>
+          <li class="event">
+            <time datetime="2025-12-20">Dec 20, 2025</time>
+            <div>
+              <strong>Winter Integration Circle</strong>
+              <p class="muted">In-person • Limited spaces</p>
+            </div>
+          </li>
+        </ul>
+        <p class="muted">Want to list an event? Use the contact form below.</p>
+      </div>
+    </section>
+
+    <section class="section gallery" id="gallery" aria-labelledby="gallery-title">
+      <div class="container">
+        <h2 id="gallery-title">Gallery</h2>
+        <div class="grid gallery-grid">
+          <div class="img-card">Image 1</div>
+          <div class="img-card">Image 2</div>
+          <div class="img-card">Image 3</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 id="contact-title">Contact</h2>
+        <p>Questions, partnerships, or volunteer inquiries — we'd love to hear from you.</p>
+
+        <form id="contactForm" class="contact-form" action="#" method="post" novalidate>
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required />
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required />
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
+          <div class="form-actions">
+            <button class="btn primary" type="submit">Send</button>
+            <span id="formStatus" class="small muted" aria-live="polite"></span>
+          </div>
+        </form>
+
+        <p class="muted">Or email us directly at <a href="mailto:hello@example.org">hello@example.org</a> — replace this with your contact address.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Sacred Spores Ministry — Built with care.</p>
+      <p class="muted small">This site is informational. Not a substitute for professional medical, legal, or mental health advice.</p>
+    </div>
+  </footer>
+
+  <!-- Donate Modal (static) -->
+  <div id="donateModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="donateTitle">
+    <div class="modal-panel" role="document">
+      <button class="modal-close" aria-label="Close donate dialog">✖</button>
+      <h3 id="donateTitle">Support Sacred Spores Ministry</h3>
+      <p class="muted">Thank you for considering a donation. Replace this content with payment provider integration (Stripe, PayPal, Ko-fi, etc.).</p>
+      <ul>
+        <li>One-time gift</li>
+        <li>Recurring monthly</li>
+        <li>Sponsor an event</li>
+      </ul>
+      <div class="modal-actions">
+        <button class="btn primary" id="donateLink">Donate (placeholder)</button>
+        <button class="btn ghost modal-close">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
